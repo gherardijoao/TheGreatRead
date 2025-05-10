@@ -8,12 +8,12 @@ interface BookCardProps {
   isFavorite?: boolean;
 }
 
-const cardBg = 'rgba(0,0,0,0.7)';
+const cardBg = 'rgba(0,0,0,0.0)';
 const titleColor = '#FEF7CD';
 const authorColor = '#FEF7CD';
 const descColor = '#E1B87F';
-const btnColor = '#A0521D';
-const btnTextColor = '#FEF7CD';
+const btnColor = '#e6a800';
+const btnTextColor = '#000000';
 
 export const BookCard: React.FC<BookCardProps> = ({ book, onViewDetails, onToggleFavorite, isFavorite }) => {
   const { title, authors, description, imageLinks, publishedDate } = book.volumeInfo;
@@ -23,13 +23,40 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onViewDetails, onToggl
   const cover = imageLinks?.thumbnail || imageLinks?.smallThumbnail || 'https://via.placeholder.com/128x192?text=No+Cover';
 
   return (
-    <div className="card h-100 shadow-sm" style={{ background: cardBg, border: 'none', borderRadius: '12px', position: 'relative' }}>
+    <div 
+      className="card h-100 shadow-sm" 
+      style={{ 
+        background: cardBg, 
+        border: 'none', 
+        borderRadius: '12px', 
+        position: 'relative',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        cursor: 'pointer'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-5px)';
+        e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.2)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+      }}
+    >
       <button
         className="position-absolute top-0 end-0 m-2 p-2 border-0 bg-transparent"
-        style={{ zIndex: 2 }}
+        style={{ 
+          zIndex: 2,
+          transition: 'transform 0.2s ease'
+        }}
         onClick={() => onToggleFavorite && onToggleFavorite(book.id)}
         aria-label="Favorite"
         type="button"
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1)';
+        }}
       >
         <img
           src="/src/assets/heart.svg"
@@ -37,9 +64,24 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onViewDetails, onToggl
           width={24}
           height={24}
           style={{
-            filter: isFavorite ? 'invert(32%) sepia(77%) saturate(747%) hue-rotate(7deg) brightness(95%) contrast(92%)' : 'invert(60%)',
+            filter: isFavorite 
+              ? 'invert(32%) sepia(77%) saturate(747%) hue-rotate(7deg) brightness(95%) contrast(92%)' 
+              : 'invert(60%)',
             opacity: isFavorite ? 1 : 0.7,
-            transition: 'filter 0.2s, opacity 0.2s',
+            transition: 'all 0.3s ease',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={(e) => {
+            if (!isFavorite) {
+              e.currentTarget.style.filter = 'invert(32%) sepia(77%) saturate(747%) hue-rotate(7deg) brightness(95%) contrast(92%)';
+              e.currentTarget.style.opacity = '0.9';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!isFavorite) {
+              e.currentTarget.style.filter = 'invert(60%)';
+              e.currentTarget.style.opacity = '0.7';
+            }
           }}
         />
       </button>
@@ -47,7 +89,20 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onViewDetails, onToggl
         src={cover}
         alt={`Cover of ${title}`}
         className="card-img-top mx-auto mt-3"
-        style={{ width: 128, height: 192, objectFit: 'cover', borderRadius: '6px', background: '#111' }}
+        style={{ 
+          width: 128, 
+          height: 192, 
+          objectFit: 'cover', 
+          borderRadius: '6px', 
+          background: '#111',
+          transition: 'transform 0.3s ease'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.05)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1)';
+        }}
       />
       <div className="card-body d-flex flex-column">
         <h5 className="card-title playfair-title mb-1" style={{ color: titleColor }}>{title}</h5>
@@ -55,10 +110,24 @@ export const BookCard: React.FC<BookCardProps> = ({ book, onViewDetails, onToggl
         <div className="mb-3" style={{ color: descColor, fontSize: '0.95rem', fontStyle: 'italic' }}>{desc}</div>
         <button
           className="mt-auto btn"
-          style={{ background: btnColor, color: btnTextColor, fontWeight: 600, borderRadius: '6px' }}
+          style={{ 
+            background: 'rgba(230, 168, 0, 0.7)', 
+            color: btnTextColor, 
+            fontWeight: 600, 
+            borderRadius: '6px',
+            transition: 'all 0.3s ease'
+          }}
           onClick={() => onViewDetails(book.id)}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(230, 168, 0, 0.9)';
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'rgba(230, 168, 0, 0.7)';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
         >
-          <span style={{ fontSize: '1.1rem', verticalAlign: 'middle' }}>&#128269;</span> View Details
+          View Details
         </button>
       </div>
     </div>

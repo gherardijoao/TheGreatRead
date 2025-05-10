@@ -1,6 +1,20 @@
 @import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
+// Variables
+$primary-color: #ffbb00;
+$secondary-color: #2e2e2e;
+$text-color: #ffffff;
+$light-bg: #f7f7f7;
+
+// Global Styles
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+}
+
 .playfair-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
@@ -11,14 +25,43 @@
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #FEF7CD;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover {
+    color: #FEF7CD;
+    
+    &::after {
+      width: 100%;
+    }
+  }
 }
 
 .search-input {
-  background: rgba(0,0,0,0.7) !important;
-  color: #FEF7CD !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  color: $text-color !important;
+  padding-right: 60px !important;
+  
   &::placeholder {
-    color: #FEF7CD !important;
-    opacity: 0.5!important;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  &:focus {
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
 }
 
@@ -57,6 +100,100 @@
   border-bottom-left-radius: 1.5rem;
   &::placeholder {
     color: #FEF7CD !important;
-    opacity: 0.5!important;
+    opacity: 0.8!important;
+  }
+}
+
+.input-group {
+  position: relative;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// Hero Section
+.hero-section {
+  padding: 120px 0;
+  
+  .hero-image {
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// About Section
+.about-section {
+  background-color: $light-bg;
+  color: $secondary-color;
+  padding: 120px 0;
+
+  .about-image {
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+
+    .feature-item {
+      h3 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// Books Section
+.books-section {
+  padding: 120px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+// Responsive Adjustments
+@media (max-width: 991.98px) {
+  .hero-section,
+  .about-section {
+    padding: 60px 0;
+    
+    .hero-image,
+    .about-image {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
