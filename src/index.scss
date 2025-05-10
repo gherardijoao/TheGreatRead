@@ -1,5 +1,5 @@
 @import "bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 
 // Variables
 $primary-color: #ffbb00;
@@ -9,40 +9,40 @@ $light-bg: #f7f7f7;
 
 // Global Styles
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   color: $text-color;
 }
 
 .playfair-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
 .navbar-link {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
   position: relative;
   text-decoration: none;
   transition: color 0.3s ease;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: #FEF7CD;
+    background-color: #fef7cd;
     transition: width 0.3s ease;
   }
-  
+
   &:hover {
-    color: #FEF7CD;
-    
+    color: #fef7cd;
+
     &::after {
       width: 100%;
     }
@@ -54,11 +54,11 @@ body {
   border: none !important;
   color: $text-color !important;
   padding-right: 60px !important;
-  
+
   &::placeholder {
     color: rgba(255, 255, 255, 0.7);
   }
-  
+
   &:focus {
     box-shadow: none;
     background-color: rgba(255, 255, 255, 0.15) !important;
@@ -66,13 +66,13 @@ body {
 }
 
 .text-yellow {
-  color: #FEF7CD !important;
+  color: #fef7cd !important;
 }
 
 .input-group .search-input,
 .input-group .search-btn {
-  background: rgba(0,0,0,0.7) !important;
-  color: #FEF7CD !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #fef7cd !important;
   border: none !important;
   box-shadow: none !important;
 }
@@ -90,8 +90,8 @@ body {
 }
 
 .input-group .search-input {
-  background: rgba(0,0,0,0.7) !important;
-  color: #FEF7CD !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #fef7cd !important;
   border: none !important;
   box-shadow: none !important;
   border-top-right-radius: 0;
@@ -99,8 +99,8 @@ body {
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   &::placeholder {
-    color: #FEF7CD !important;
-    opacity: 0.8!important;
+    color: #fef7cd !important;
+    opacity: 0.8 !important;
   }
 }
 
@@ -134,7 +134,7 @@ body {
 // Hero Section
 .hero-section {
   padding: 120px 0;
-  
+
   .hero-image {
     img {
       max-width: 100%;
@@ -176,7 +176,7 @@ body {
 // Books Section
 .books-section {
   padding: 120px 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 // Responsive Adjustments
@@ -184,7 +184,7 @@ body {
   .hero-section,
   .about-section {
     padding: 60px 0;
-    
+
     .hero-image,
     .about-image {
       margin-top: 2rem;
