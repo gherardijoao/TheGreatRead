@@ -1,0 +1,62 @@
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.playfair-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.navbar-link {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.search-input {
+  background: rgba(0,0,0,0.7) !important;
+  color: #FEF7CD !important;
+  &::placeholder {
+    color: #FEF7CD !important;
+    opacity: 0.5!important;
+  }
+}
+
+.text-yellow {
+  color: #FEF7CD !important;
+}
+
+.input-group .search-input,
+.input-group .search-btn {
+  background: rgba(0,0,0,0.7) !important;
+  color: #FEF7CD !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.input-group .search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  padding: 0 1.5rem;
+  height: 100%;
+}
+
+.input-group .search-input {
+  background: rgba(0,0,0,0.7) !important;
+  color: #FEF7CD !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  &::placeholder {
+    color: #FEF7CD !important;
+    opacity: 0.5!important;
+  }
+}
