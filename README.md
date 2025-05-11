@@ -41,7 +41,6 @@ The Great Read é uma plataforma moderna para entusiastas de literatura, oferece
   - Filtragem por idioma (Português/Inglês)
   - Carregamento progressivo
   - Detecção automática de obras clássicas
-  - Guias de leitura contextual
 
 - **Minha Estante:**
 
@@ -74,17 +73,7 @@ The Great Read é uma plataforma moderna para entusiastas de literatura, oferece
 
 ## Sistema de Estilos
 
-As classes Bootstrap (className) definem o layout e estilos base, o SCSS/Custom: Adiciona temas e modificações globais enquanto o CSS inline faz ajustes específicos e personalizações
-
-- **Bootstrap 5:** Grid system e componentes base
-- **SCSS:**
-  - Variáveis temáticas
-  - Mixins responsivos
-  - Organização modular
-- **CSS-in-JS:**
-  - Estilos dinâmicos
-  - Animações performáticas
-  - Theme switching preparado
+As classes Bootstrap (className) definem o layout e estilos base com o grid system(usado muito nas classes inline), o SCSS/Custom: Adiciona temas e modificações globais enquanto o CSS inline faz ajustes específicos e personalizações
 
 ## Como Executar
 
