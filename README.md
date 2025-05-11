@@ -23,7 +23,7 @@ The Great Read é uma plataforma moderna para entusiastas de literatura, oferece
 - **Roteamento:** React Router DOM
 - **Gerenciamento de Estado:** React Hooks
 - **Persistência Local:** localStorage
-- **APIs Integradas:** Google Books API + Open Library
+- **APIs Integradas:** Google Books API
 
 ## Páginas e Componentes
 
