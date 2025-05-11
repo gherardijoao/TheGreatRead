@@ -15,6 +15,10 @@ export interface Book {
     };
     averageRating?: number;
     ratingsCount?: number;
+    industryIdentifiers?: {
+      type: string;
+      identifier: string;
+    }[];
   };
 }
 

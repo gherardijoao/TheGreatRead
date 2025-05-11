@@ -89,17 +89,20 @@ export default function Home() {
         <Header />
 
         {/* Hero Section */}
-        <section className="hero-section py-5">
-          <div className="container">
+        <section className="hero-section py-3 py-md-4 py-lg-5">
+          <div className="container px-3 px-md-4">
             <div className="row">
-              <div className="col-lg-10">
+              <div className="col-12 col-lg-10">
                 <h1
-                  className="display-2 playfair-title text-light mb-4"
-                  style={{ whiteSpace: "nowrap" }}
+                  className="display-4 display-md-3 display-lg-2 playfair-title text-light mb-3 mb-md-4"
+                  style={{
+                    whiteSpace: "normal", // Change from nowrap to normal for mobile
+                    fontSize: "calc(1.5rem + 3vw)", // Fluid typography
+                  }}
                 >
                   Descubra Tesouros da Literatura
                 </h1>
-                <p className="lead text-yellow mb-4 ms-1">
+                <p className="lead text-yellow mb-3 mb-md-4 ms-0 ms-md-1">
                   Explore uma vasta coleção de livros de diversos gêneros,
                   autores e épocas.
                 </p>
@@ -132,14 +135,17 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="about-section py-5 bg-light">
-          <div className="container">
+        <section className="about-section py-4 py-md-5 bg-light">
+          <div className="container px-3 px-md-4">
             <div className="row">
               <div className="col-lg-12">
-                <h2 className="display-4 playfair-title mb-4">
+                <h2 className="display-5 display-md-4 playfair-title mb-3 mb-md-4">
                   Sobre The Great Read
                 </h2>
-                <p className="lead mb-4">
+                <p
+                  className="lead mb-3 mb-md-4"
+                  style={{ fontSize: "calc(1rem + 0.2vw)" }}
+                >
                   O nome The Great Read é uma homenagem sutil a The Great
                   Gatsby, um dos maiores clássicos da literatura. Assim como a
                   obra de F. Scott Fitzgerald nos convida a mergulhar em um
@@ -172,14 +178,14 @@ export default function Home() {
 
         {/* Book Cards Section */}
         <section
-          className="books-section py-3"
+          className="books-section py-3 py-md-4"
           style={{ background: "rgba(0,0,0,0.2)" }}
         >
-          <div className="container">
-            <h2 className="text-center display-4 playfair-title text-light mb-3">
+          <div className="container px-3 px-md-4">
+            <h2 className="text-center display-5 display-md-4 playfair-title text-light mb-3">
               Livros procurados
             </h2>
-            <div className="row g-2">
+            <div className="row g-2 g-md-3 g-lg-4">
               {loading ? (
                 <div className="col-12 text-center py-5">
                   <div className="spinner-border text-light" role="status">
@@ -189,7 +195,7 @@ export default function Home() {
               ) : books.length > 0 ? (
                 books.slice(0, 8).map((book) => (
                   <div
-                    className="col-12 col-sm-6 col-md-4 col-lg-3"
+                    className="col-6 col-sm-6 col-md-4 col-lg-3" // Change col-12 to col-6 for XS
                     key={book.id}
                   >
                     <BookCard book={book} onViewDetails={handleViewDetails} />
@@ -207,12 +213,17 @@ export default function Home() {
         </section>
 
         {/* Minha Estante Section */}
-        <section className="my-shelf-section py-5 bg-light">
-          <div className="container">
+        <section className="my-shelf-section py-4 py-md-5 bg-light">
+          <div className="container px-3 px-md-4">
             <div className="row">
               <div className="col-lg-12">
-                <h2 className="display-4 playfair-title mb-4">Minha Estante</h2>
-                <p className="lead mb-4">
+                <h2 className="display-5 display-md-4 playfair-title mb-3 mb-md-4">
+                  Minha Estante
+                </h2>
+                <p
+                  className="lead mb-3 mb-md-4"
+                  style={{ fontSize: "calc(1rem + 0.2vw)" }}
+                >
                   Crie sua própria biblioteca digital personalizada! Ao
                   favoritar um livro, ele será automaticamente adicionado à sua
                   estante virtual. Organize suas leituras, mantenha um registro
@@ -220,7 +231,8 @@ export default function Home() {
                   momento. Sua estante é o seu espaço pessoal para colecionar e
                   organizar as obras que mais te inspiram.
                 </p>
-                <div className="row g-4 mb-5">
+                <div className="row g-3 g-md-4 mb-4 mb-md-5">
+                  {" "}
                   <div className="col-md-4">
                     <div className="feature-item">
                       <h3 className="h5" style={{ color: "#ffbb00" }}>
@@ -246,10 +258,15 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5">
+                <div className="mt-3 mt-md-5">
                   <CustomButton
                     onClick={() => navigate("/minha-estante")}
-                    style={{ padding: "12px 24px", fontSize: "1.1rem" }}
+                    style={{
+                      padding: "8px 16px",
+                      paddingLeft: "16px",
+                      paddingRight: "16px",
+                      fontSize: "1rem",
+                    }}
                   >
                     Acessar Minha Estante
                   </CustomButton>

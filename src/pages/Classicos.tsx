@@ -347,8 +347,8 @@ export default function Classicos() {
                 </h2>
                 <p className="lead mb-4">
                   A literatura clássica pode parecer intimidadora à primeira
-                  vista. Nossos guias de leitura oferecem contexto histórico,
-                  análises dos temas principais e dicas para apreciar cada obra.
+                  vista. Porém deve-se entender o contexto histórico, analisar
+                  os temas principais e principalmente dicas apreciar cada obra.
                 </p>
                 <div className="row g-4 mb-5">
                   <div className="col-md-4">
@@ -370,22 +370,16 @@ export default function Classicos() {
                   <div className="col-md-4">
                     <div className="feature-item">
                       <h3 className="h5" style={{ color: "#ffbb00" }}>
-                        Recomendações de Leitura
+                        Por onde começar
                       </h3>
-                      <p>Descubra por onde começar sua jornada literária</p>
+                      <p>
+                        Pesquise livros que contém assuntos, temas, cenários e
+                        épocas que te interessem.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-5">
-                  <CustomButton
-                    onClick={() => {
-                      /* Add navigation logic here */
-                    }}
-                    style={{ padding: "12px 24px", fontSize: "1.1rem" }}
-                  >
-                    Acessar Guias de Leitura
-                  </CustomButton>
-                </div>
+                <div className="mt-5"></div>
               </div>
             </div>
           </div>
