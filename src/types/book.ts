@@ -4,26 +4,30 @@ export interface Book {
     title: string;
     authors?: string[];
     description?: string;
-    imageLinks?: {
-      thumbnail?: string;
-      smallThumbnail?: string;
-    };
-    publishedDate?: string;
     publisher?: string;
+    publishedDate?: string;
     pageCount?: number;
     categories?: string[];
     language?: string;
+    imageLinks?: {
+      smallThumbnail?: string;
+      thumbnail?: string;
+    };
+    averageRating?: number;
+    ratingsCount?: number;
   };
 }
 
 export interface BooksResponse {
   kind: string;
   totalItems: number;
-  items: Book[];
+  items?: Book[]; // items can be undefined if totalItems is 0
 }
 
 export interface SearchParams {
   query: string;
   startIndex?: number;
   maxResults?: number;
-} 
+  orderBy?: "relevance" | "newest";
+  filter?: "partial" | "full" | "free-ebooks" | "paid-ebooks" | "ebooks";
+}

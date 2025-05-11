@@ -4,7 +4,7 @@ import { favoritesService } from "../services/favoriteService";
 
 interface BookCardProps {
   book: Book;
-  language: string;
+  language?: string;
   onViewDetails: (id: string) => void;
   onToggleFavorite?: (id: string, book: Book) => void;
   isFavorite?: boolean;
@@ -14,7 +14,6 @@ const cardBg = "rgba(0,0,0,0.0)";
 const titleColor = "#FEF7CD";
 const authorColor = "#FEF7CD";
 const descColor = "#E1B87F";
-const btnColor = "#e6a800";
 const btnTextColor = "#000000";
 
 export const BookCard: React.FC<BookCardProps> = ({

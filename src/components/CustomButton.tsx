@@ -8,6 +8,7 @@ interface CustomButtonProps {
   style?: React.CSSProperties;
   type?: "button" | "submit" | "reset";
   to?: string; // Add to prop for navigation
+  disabled?: boolean;
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
