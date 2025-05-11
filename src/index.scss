@@ -1,13 +1,15 @@
 @import "bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 
+// explicação da estilização utilizada: As classes Bootstrap (className) definem o layout e estilos base, o SCSS/Custom: Adiciona temas e modificações globais enquanto o CSS inline faz ajustes específicos e personalizações
+
 // Variables
 $primary-color: #ffbb00;
 $secondary-color: #2e2e2e;
 $text-color: #ffffff;
 $light-bg: #f7f7f7;
 
-// Breakpoints (seguindo Bootstrap 5)
+// Breakpoints ( Bootstrap 5)
 // X-Small - < 576px (Default)
 // Small - ≥ 576px
 // Medium - ≥ 768px

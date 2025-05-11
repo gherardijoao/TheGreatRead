@@ -1,54 +1,99 @@
-# React + TypeScript + Vite
+# The Great Read - Plataforma Literária
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot da Aplicação](/src/assets/screenshot.png)
 
-Currently, two official plugins are available:
+## Visão Geral
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Great Read é uma plataforma moderna para entusiastas de literatura, oferecendo uma experiência imersiva na descoberta e organização de livros. Desenvolvido com foco em clássicos literários, o projeto combina tecnologias modernas com uma interface intuitiva para criar uma jornada única de exploração literária.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Busca Avançada:** Encontre livros por título, autor ou gênero
+- **Sistema de Favoritos:** Salve seus livros preferidos no localStorage
+- **Detalhes Completo:** Visualize informações detalhadas de cada obra
+- **Modo Clássicos:** Filtre por obras clássicas e selecione idioma (PT/EN)
+- **Estante Virtual:** Organize sua coleção pessoal de forma intuitiva
+- **Design Responsivo:** Adaptação perfeita para todos os dispositivos
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tecnologias Utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Frontend:** React + TypeScript
+- **Build Tool:** Vite
+- **Estilização:** Bootstrap 5 + SCSS + CSS-in-JS
+- **Roteamento:** React Router DOM
+- **Gerenciamento de Estado:** React Hooks
+- **Persistência Local:** localStorage
+- **APIs Integradas:** Google Books API + Open Library
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Páginas e Componentes
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Principais Rotas
+
+- **Home:**
+
+  - Banner hero interativo
+  - Busca inteligente
+  - Seção de livros aleatórios
+  - Sobre a plataforma
+
+- **Clássicos:**
+
+  - Filtragem por idioma (Português/Inglês)
+  - Carregamento progressivo
+  - Detecção automática de obras clássicas
+  - Guias de leitura contextual
+
+- **Minha Estante:**
+
+  - Visualização de favoritos
+  - Gestão de coleção pessoal
+  - Empty states interativos
+  - Sincronização automática com localStorage
+
+- **Detalhes do Livro:**
+  - Informações completas da obra
+  - Sistema de avaliações
+  - Metadados detalhados (ISBN, editora, etc)
+  - Integração com Goodreads
+
+### Componentes Reutilizáveis
+
+- `BookCard`: Card interativo para exibição de livros
+- `CustomButton`: Botão temático com hover animations
+- `Header/Footer`: Layout consistente com navegação responsiva
+- `BookDetails`: Modal dinâmico com gestão de estado
+
+## Integração com APIs
+
+### Google Books API
+
+- Busca avançada com filtros personalizados
+- Paginação inteligente
+- Cache de resultados
+- Tratamento de erros robusto
+
+## Sistema de Estilos
+
+As classes Bootstrap (className) definem o layout e estilos base, o SCSS/Custom: Adiciona temas e modificações globais enquanto o CSS inline faz ajustes específicos e personalizações
+
+- **Bootstrap 5:** Grid system e componentes base
+- **SCSS:**
+  - Variáveis temáticas
+  - Mixins responsivos
+  - Organização modular
+- **CSS-in-JS:**
+  - Estilos dinâmicos
+  - Animações performáticas
+  - Theme switching preparado
+
+## Como Executar
+
+Clone o repositório ou baixe o arquivo zipado.
+
+depois: "npm install" -> "npm run dev"
+
+## Autores
+
+**João Gherardi**
+
+---

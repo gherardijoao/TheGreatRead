@@ -147,15 +147,12 @@ export default function Home() {
                   style={{ fontSize: "calc(1rem + 0.2vw)" }}
                 >
                   O nome The Great Read é uma homenagem sutil a The Great
-                  Gatsby, um dos maiores clássicos da literatura. Assim como a
-                  obra de F. Scott Fitzgerald nos convida a mergulhar em um
-                  universo cheio de significado, este site nasce com o propósito
-                  de despertar o amor pelos grandes livros. Focado especialmente
-                  nos clássicos, The Great Read é um espaço para quem deseja
-                  explorar, pesquisar e descobrir obras que atravessam o tempo —
-                  aquelas que moldaram gerações e continuam a inspirar leitores
-                  ao redor do mundo. Aqui, cada leitura é um reencontro com o
-                  melhor que a literatura tem a oferecer.
+                  Gatsby, um dos maiores clássicos da literatura.Focado
+                  especialmente nos clássicos, The Great Read é um espaço para
+                  quem deseja explorar, pesquisar e descobrir obras que
+                  atravessam o tempo aquelas que moldaram gerações e continuam a
+                  inspirar leitores ao redor do mundo. Aqui, cada leitura é um
+                  reencontro com o melhor que a literatura tem a oferecer.
                 </p>
                 <div className="features-grid">
                   <div className="feature-item">
